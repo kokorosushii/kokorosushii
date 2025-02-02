@@ -1,0 +1,75 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+}
+
+/* Cabeçalho com imagens sobrepondo */
+header {
+    position: relative;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.fotos-cabecalho {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* Imagens empilhadas verticalmente */
+    justify-content: center;
+    height: 100%;
+}
+
+.fotos-cabecalho img {
+    position: absolute;
+    width: 150px; /* Imagens menores */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: -30px; /* Espaço para sobreposição */
+}
+
+.fotos-cabecalho img:nth-child(1) { z-index: 1; }
+.fotos-cabecalho img:nth-child(2) { z-index: 2; }
+.fotos-cabecalho img:nth-child(3) { z-index: 3; }
+
+/* GIF no meio */
+.gif-container {
+    display: flex;
+    justify-content: center; /* Centraliza o GIF */
+    margin: 30px 0; /* Espaçamento acima e abaixo do GIF */
+}
+
+.gif {
+    width: 200px; /* Definindo o tamanho do GIF */
+    height: auto;
+}
+
+/* Galeria das imagens abaixo */
+.galeria {
+    display: flex;
+    flex-direction: column; /* Organiza as imagens em uma coluna */
+    gap: 10px; /* Espaçamento entre as imagens */
+    padding: 0 20px;
+}
+
+.imagem-galeria img {
+    width: 200px; /* Imagens menores */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.imagem-galeria img:hover {
+    transform: scale(1.05);
+}
